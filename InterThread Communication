@@ -1,0 +1,30 @@
+class Threads extends Thread
+{
+ int total = 0;
+ public void run()
+ {
+  synchronized(this)
+  {
+   System.out.println("Child starts its execution");
+   for(int i=1;i<=100;i++)
+   total = total + i;
+   System.out.println("Child completes execution");
+   this.notify();
+  }
+ }
+}
+class Inter
+{
+ public static void main(String args[])throws InterruptedException
+ {
+  Threads t = new Threads();
+  t.start();
+  synchronized(t)
+  {
+   System.out.println("Parent thread waits for child using wait()");
+   t.wait();
+   System.out.println("Parent thread resumes execution");
+   System.out.println(t.total);
+  }
+ }
+}
