@@ -1,0 +1,56 @@
+class Parent
+{
+ int a;
+ String b;
+ void set1(int x,String y)
+ {
+   a = x;
+   b = y;
+ }
+void get1()
+{
+ System.out.println(a+ " " +b);
+}
+}
+class Child1 extends Parent
+{
+ int c;
+ String d;
+ void set2(int x,String y)
+ {
+   c = x;
+   d = y;
+ }
+void get2()
+{
+ System.out.println(c+ " " +d);
+}
+}
+class Child2 extends Parent
+{
+ int e;
+ String f;
+ void set3(int x,String y)
+ {
+   e = x;
+   f = y;
+ }
+void get3()
+{
+ System.out.println(e+ " " +f);
+}
+}
+class HeirInheritance
+{
+ public static void main(String args[])
+ {
+  Child1 s1 = new Child1();
+  Child2 s2 = new Child2();
+  s1.set2(1,"Sheshadri");
+  s1.get2();
+  s2.set3(2,"Pavan");
+  s2.get3();
+ }
+}
+ 
+ 
