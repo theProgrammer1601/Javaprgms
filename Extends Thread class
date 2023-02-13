@@ -1,0 +1,19 @@
+class Mytd extends Thread
+{
+ public static void main(String args[])
+ {
+  Thread t = new Thread();
+  System.out.println(t.currentThread());
+  System.out.println(t.getName());
+  t.setName("Sheshadri");
+  System.out.println(t.getName());
+  System.out.println(t.getId());
+  
+  Thread t1 = new Thread();
+  System.out.println(t1.currentThread());
+  System.out.println(t1.getName());
+  t1.setName("Shesh");
+  System.out.println(t1.getName());
+  System.out.println(t1.getId());
+}
+}
