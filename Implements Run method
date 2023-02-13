@@ -1,0 +1,30 @@
+class MyThd extends Thread
+{
+ public void run()
+ {
+  for(int i=0;i<5;i++)
+  System.out.println("Child Thread");
+ }
+}
+
+class Mth
+{
+ public static void main(String args[])throws InterruptedException
+ {
+  MyThd t = new MyThd();
+  t.start(); 
+   for(int i=0;i<5;i++)
+   {
+    t.sleep(1000);
+    System.out.println("Main Thread ....1");
+   } 
+  MyThd t1 = new MyThd();
+  t1.start();
+  t1.join(); 
+  for(int i=0;i<5;i++)
+  {
+   t1.sleep(1000);
+   System.out.println("Main Thread ....2");
+  } 
+ }
+}  
