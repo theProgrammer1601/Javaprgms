@@ -1,0 +1,33 @@
+class Base
+{
+ int a,b;
+ void print()
+ { 
+  System.out.println(a+" "+b);
+ }
+}
+ 
+class Derived extends Base
+{
+ int a,b;
+ void set(int x,int y)
+{
+ super.a = x;
+ b = y;
+}
+ void print()
+ {
+  super.print();
+  System.out.println(super.a+" "+b);
+ }
+}
+
+class WithSuper
+{
+ public static void main(String args[])
+ { 
+ Derived d = new Derived();
+ d.set(10,20);
+ d.print();
+ }
+}
