@@ -1,0 +1,28 @@
+class Garbage
+ {
+  Garbage()
+  {
+   System.out.println("Object Created");
+  }
+ protected void finalize()
+ {
+ System.out.println("Object Destroyed");
+ }
+ }
+class Collect
+{
+ public static void main(String args[])
+ {
+  Garbage g1 = new Garbage();
+          g1 = null; // ready for garbage collection
+  
+  Garbage g2 = new Garbage();
+  Garbage g3 = new Garbage();
+ 
+   g2 = g3; // ready for garbage collection
+  
+   new Garbage(); // Anonymous object ready for GC
+   System.gc();
+}
+}  
+ 
