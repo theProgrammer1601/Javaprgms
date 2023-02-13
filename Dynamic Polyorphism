@@ -1,0 +1,38 @@
+class A
+{
+  void show()
+ {
+ System.out.println("Class A");
+ }
+}
+ class B extends A
+{
+  void show()
+ {
+ System.out.println("Class B");
+ }
+}
+class C extends B
+{
+  void show()
+ {
+ System.out.println("Class C");
+ }
+}
+
+class DynamicPoly
+{
+ public static void main(String args[])
+{
+ A a = new A();
+ A b = new B();
+ A c = new C();
+ A ref;
+ ref = a;
+ ref.show();
+ ref = b;
+ ref.show();
+ ref = c;
+ ref.show();
+ }
+}
