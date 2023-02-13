@@ -1,0 +1,50 @@
+class Table
+{
+ void printTable(int n)
+ {
+  System.out.println("Hello....");
+  synchronized(this)
+  { 
+   for(int i=1;i<=10;i++)
+   System.out.println(n*i); 
+  }
+ System.out.println("How r u.........");
+ } 
+}
+class Thread10 extends Thread 
+{
+ Table t;
+ Thread10(Table t)
+ {
+  this.t = t;
+ }
+ public void run()
+ {
+  t.printTable(3);
+ }
+}
+class Thread11 extends Thread 
+{
+ Table t;
+ Thread11(Table t)
+ {
+  this.t = t;
+ }
+ public void run()
+ {
+  t.printTable(5);
+ }
+}
+class Synch
+{
+ public static void main(String args[])
+ {
+  Table obj = new Table();
+  Thread10 t1 = new Thread10(obj);
+  Thread11 t2 = new Thread11(obj);
+  t1.start();
+  t2.start();
+ }
+}
+ 
+
