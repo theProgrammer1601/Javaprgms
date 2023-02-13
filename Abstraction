@@ -1,0 +1,30 @@
+abstract class Vehicle
+{
+  abstract void wheels();
+}
+ 
+class TwoWheeler extends Vehicle
+{
+  void wheels()
+  {
+    System.out.println("Two Wheeler");
+  }
+}
+class ThreeWheeler extends TwoWheeler
+{
+  void wheels()
+  {
+    System.out.println("Three Wheeler");
+  }
+}
+
+class MainVehicle
+{
+ public static void main(String args[])
+ {
+  TwoWheeler t = new TwoWheeler();
+  t.wheels();
+  ThreeWheeler th = new ThreeWheeler();
+  th.wheels();
+ }
+}
