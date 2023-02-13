@@ -1,0 +1,30 @@
+class MyThread3 extends Thread
+{
+ public void run()
+ {
+  System.out.println(Thread.currentThread().getName());
+  System.out.println(Thread.currentThread().getPriority());
+ }
+}
+class MainTh
+{
+ public static void main(String args[])
+ {
+  MyThread3 t = new MyThread3();
+  MyThread3 t1 = new MyThread3();
+  System.out.println(Thread.currentThread().getName());
+  System.out.println(Thread.currentThread().getPriority());
+  t.setName("OOC");
+  t.setPriority(1);
+  t.start();
+  System.out.println(t.getName());
+  System.out.println(t.getPriority());
+  System.out.println(Thread.currentThread().getName());
+  System.out.println(Thread.currentThread().getPriority());
+  t1.setName("OOC");
+  t1.setPriority(5);
+  t1.start();
+  System.out.println(t1.getName());
+  System.out.println(t1.getPriority());
+ }
+}
