@@ -1,0 +1,75 @@
+class Q
+{
+ int num;
+ boolean value = false;
+ synchronized void put(int num)
+ {
+  while(value)
+  {
+   try{ wait();} catch(Exception e){}
+  }
+  System.out.println("Put"+num);
+  this.num = num;
+  value = true;
+  notify();
+ }
+ synchronized void get()
+ {
+  while(!value)
+  {
+   try{ wait();} catch(Exception e){}
+  }
+  System.out.println("Get"+num);
+  value = false;
+  notify();
+ }
+}
+
+class Producer implements Runnable
+{
+ Q q;
+ Producer(Q q)
+ {
+  this.q = q;
+  Thread t = new Thread(this,"Producer");
+  t.start();
+ }
+ public void run()
+ {
+  int i = 0;
+  while(true)
+  {
+   q.put(i++);
+   try{Thread.sleep(1000);} catch(Exception e){}
+  }
+ }
+}
+
+class Consumer implements Runnable
+{
+ Q q;
+ Consumer(Q q)
+ {
+  this.q = q;
+  Thread t = new Thread(this,"consumer");
+  t.start();
+ }
+ public void run()
+ {
+  while(true)
+  {
+   q.get();
+   try{Thread.sleep(1000);} catch(Exception e){}
+  }
+ }
+}
+class BoundedBuffer
+{
+ public static void main(String args[])
+ {
+  Q q = new Q();
+  new Producer(q);//invokes producer constructor
+  new Consumer(q);//invokes consumer constructor
+  System.out.println("Press Ctrl + c to stop ");
+ }
+}
