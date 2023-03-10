@@ -1,0 +1,23 @@
+import javax.swing.*;
+class JCheck
+{
+ public static void main(String args[])
+ {
+  JFrame jf = new JFrame("CheckBox");
+  JCheckBox jb = new JCheckBox("JAVA");
+  jb.setBounds(30, 100, 100, 50);
+  JCheckBox jbl = new JCheckBox("Python");
+  jbl.setBounds(30, 150, 100, 50);
+  JCheckBox jbl1 = new JCheckBox("C");
+  jbl1.setBounds(30, 200, 100, 50);
+  JCheckBox jbl2 = new JCheckBox("Unix");
+  jbl2.setBounds(30, 250, 100, 50); 
+  jf.add(jb);
+  jf.add(jbl);
+  jf.add(jbl1);
+  jf.add(jbl2);
+  jf.setSize(300, 600);
+  jf.setLayout(null);
+  jf.setVisible(true);
+ }
+}
