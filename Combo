@@ -1,0 +1,16 @@
+import java.awt.*;
+import javax.swing.*;
+public class JCombo
+{
+ public static void main(String args[])
+ {
+  JFrame f = new JFrame("Combo Demo");
+  String Branch[]={"AIML","CSE","AI","DS"};
+  JComboBox jc =new JComboBox(Branch);
+  jc.setBounds(50,50,80,50);
+  f.add(jc);
+  f.setSize(400, 400);
+  f.setLayout(null);
+  f.setVisible(true);
+ }
+}
