@@ -1,0 +1,61 @@
+import javax.swing.*;
+public class JTabPane
+{
+public static void main(String[] a)
+{
+JFrame f = new JFrame("JTab");
+f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+f.add(new JTabbedPaneDemo());
+f.setSize(500, 500); 
+f.setVisible(true);
+}
+}
+
+class JTabbedPaneDemo extends JPanel
+{
+JTabbedPaneDemo()
+{
+makeGUI();
+}
+void makeGUI()
+{
+JTabbedPane jtp = new JTabbedPane(); 
+jtp.addTab("Cities", new CitiesPanel()); 
+jtp.addTab("Colors", new ColorsPanel()); 
+jtp.addTab("Flavors", new FlavorsPanel()); 
+add(jtp);
+}
+}
+class CitiesPanel extends JPanel
+{
+public CitiesPanel()
+{
+JButton b1 = new JButton("Ballari"); add(b1);
+JButton b2 = new JButton("Raichur"); add(b2);
+JButton b3 = new JButton("Bengaluru"); add(b3);
+JButton b4 = new JButton("Mysuru"); add(b4);
+JButton b5 = new JButton("Tirupati"); add(b5);
+}
+}
+class ColorsPanel extends JPanel
+{
+public ColorsPanel()
+{
+JCheckBox cb1 = new JCheckBox("Red"); add(cb1);
+JCheckBox cb2 = new JCheckBox("Green"); add(cb2);
+JCheckBox cb3 = new JCheckBox("Blue"); add(cb3);
+JCheckBox cb4 = new JCheckBox("Yellow"); add(cb4);
+}
+}
+class FlavorsPanel extends JPanel
+{
+public FlavorsPanel()
+{
+JComboBox jcb = new JComboBox();
+ jcb.addItem("Vanilla"); 
+jcb.addItem("Chocolate"); 
+jcb.addItem("Strawberry"); 
+jcb.addItem("Butterscotch");
+add(jcb);
+}
+}
