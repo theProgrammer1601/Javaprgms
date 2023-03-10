@@ -1,0 +1,24 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+public class AdapterDemo extends Applet
+{
+ public void init()
+ {
+  addMouseListener(new MyMouseAdapter(this));
+ }
+}
+
+class MyMouseAdapter extends MouseAdapter
+{
+ AdapterDemo a;
+ public MyMouseAdapter(AdapterDemo a)
+ {
+  this.a = a;
+ }
+ public void mouseClicked(MouseEvent me)
+ {
+  a.showStatus("Mouse Clicked");
+ }
+}
+
