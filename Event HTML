@@ -1,0 +1,5 @@
+<html>
+<title> Applet Swing</title>
+<applet code="EventJApplet.class" width=400 height=400>
+</applet>
+</html>
